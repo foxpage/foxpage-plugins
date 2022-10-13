@@ -1,17 +1,17 @@
 {
   "name": "@foxpage/foxpage-plugins",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "contributors": [
     {
-        "name": "drxiao",
-        "url": "https://github.com/drxiao1",
-        "githubUsername": "drxiao1"
+      "name": "drxiao",
+      "url": "https://github.com/drxiao1",
+      "githubUsername": "drxiao1"
     }
-],
+  ],
   "scripts": {
     "build": "lerna run clean & node ./scripts/build.js",
     "boot": "yarn & lerna bootstrap & npm run build",
