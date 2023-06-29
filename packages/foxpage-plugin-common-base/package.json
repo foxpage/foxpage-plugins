@@ -1,7 +1,7 @@
 {
   "name": "@foxpage/foxpage-plugin-common-base",
-  "version": "0.2.20",
-  "description": "foxpage common base plugin",
+  "version": "1.0.0",
+  "description":"foxpage common base plugin",
   "keywords": [
     "plugin",
     "foxpage plugin",
@@ -28,20 +28,23 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@foxpage/foxpage-plugin-debug-page": "^0.2.11",
-    "@foxpage/foxpage-plugin-debugger": "^0.2.4",
-    "@foxpage/foxpage-plugin-file-parse": "^0.1.0",
-    "@foxpage/foxpage-plugin-function-parse": "^0.4.2",
-    "@foxpage/foxpage-plugin-header-parse": "^0.1.0",
-    "@foxpage/foxpage-plugin-log": "^0.2.3",
-    "@foxpage/foxpage-plugin-parse-page": "^0.2.9",
-    "@foxpage/foxpage-plugin-preview-page": "^0.1.11",
-    "@foxpage/foxpage-plugin-react-helmet": "^0.4.3",
-    "@foxpage/foxpage-plugin-react-render": "^0.3.2",
-    "@foxpage/foxpage-plugin-render-mark": "^0.1.0",
-    "@foxpage/foxpage-plugin-urlobj-parse": "^0.3.3",
-    "@foxpage/foxpage-plugin-urlquery-parse": "^0.3.3",
-    "@foxpage/foxpage-plugin-visual-editor": "^0.2.2",
-    "@foxpage/foxpage-plugin-visual-html": "^0.1.0"
+    "@foxpage/foxpage-plugin-block-dsl": "^1.0.0",
+    "@foxpage/foxpage-plugin-debug-page": "^1.0.0",
+    "@foxpage/foxpage-plugin-debugger": "^1.0.0",
+    "@foxpage/foxpage-plugin-designer-render": "^1.0.0",
+    "@foxpage/foxpage-plugin-file-parse": "^1.0.0",
+    "@foxpage/foxpage-plugin-function-parse": "^1.0.0",
+    "@foxpage/foxpage-plugin-header-parse": "^1.0.0",
+    "@foxpage/foxpage-plugin-log": "^1.0.0",
+    "@foxpage/foxpage-plugin-parse-page": "^1.0.0",
+    "@foxpage/foxpage-plugin-preview-page": "^1.0.0",
+    "@foxpage/foxpage-plugin-react-helmet": "^1.0.0",
+    "@foxpage/foxpage-plugin-react-render": "^1.0.0",
+    "@foxpage/foxpage-plugin-render-block": "^1.0.0",
+    "@foxpage/foxpage-plugin-render-mark": "^1.0.0",
+    "@foxpage/foxpage-plugin-urlobj-parse": "^1.0.0",
+    "@foxpage/foxpage-plugin-urlquery-parse": "^1.0.0",
+    "@foxpage/foxpage-plugin-visual-editor": "^1.0.0",
+    "@foxpage/foxpage-plugin-visual-html": "^1.0.0"
   }
 }

@@ -22,6 +22,7 @@ export const createElements = (ctx: Context, elements: ReactElement[]) => {
     return elements;
   }
 
+  const styledComponentCollectCost = ctx.performanceLogger?.('styledComponentCollectTime');
   ctx.sheet = new ServerStyleSheet();
   try {
     const reactElementWithStyle = ctx.sheet.collectStyles(elements);
@@ -30,6 +31,8 @@ export const createElements = (ctx: Context, elements: ReactElement[]) => {
     ctx.sheet.seal();
     ctx.logger?.warn('create elements with styled components fail.', error);
     throw error;
+  } finally {
+    styledComponentCollectCost();
   }
 };
 
@@ -41,6 +44,7 @@ export const createElements = (ctx: Context, elements: ReactElement[]) => {
  * @returns collected result
  */
 export const renderWithStyledComponents = async (ctx: Context) => {
+  const styledComponentRenderCost = ctx.performanceLogger?.('styledComponentRenderTime');
   // for avoid pollute the origin dsl
   const page = ctx.page;
   const _dsl = _.cloneDeep(page?.schemas);
@@ -66,6 +70,7 @@ export const renderWithStyledComponents = async (ctx: Context) => {
   page.schemas = _dsl;
   ctx.updatePage(page);
 
+  styledComponentRenderCost();
   return _dsl;
 };
 

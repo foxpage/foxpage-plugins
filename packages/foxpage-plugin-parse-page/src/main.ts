@@ -18,7 +18,9 @@ export const handleParsePage = async () => {
       };
       try {
         ctx.logger?.info('parse-page params:', JSON.stringify(params));
-        ctx.locale = params.opt?.locale;
+        const { locale, file } = params.opt || {};
+        ctx.locale = locale;
+        ctx.file = file;
         const result = await parsePage(params.page, {
           ...params.opt,
           ctx,

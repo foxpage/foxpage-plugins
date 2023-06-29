@@ -1,6 +1,6 @@
 {
   "name": "@foxpage/foxpage-plugin-file-parse",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "foxpage file parse plugin",
   "keywords": [
     "foxpage",
@@ -29,8 +29,8 @@
     "clean": "rimraf lib"
   },
   "devDependencies": {
-    "@foxpage/foxpage-plugin": "^0.2.5",
-    "@foxpage/foxpage-types": "^0.5.2",
+    "@foxpage/foxpage-plugin": "^1.0.0",
+    "@foxpage/foxpage-types": "^1.0.0",
     "rimraf": "^2.6.3",
     "typescript": "^4.5.5"
   },

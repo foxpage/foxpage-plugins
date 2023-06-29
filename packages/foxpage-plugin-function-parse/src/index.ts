@@ -10,7 +10,7 @@ import {
 export interface FunctionVariable extends VariableItem {
   type: 'data.function.call';
   props: VariableProps<{
-    function: string;
+    function?: { code: string; variables: { key: string; value?: any }[] };
     args: any[];
   }>;
 }
@@ -27,20 +27,18 @@ const functionParser = ({ api }: { api: FoxpagePluginApi }): FoxpagePlugin<Foxpa
           type: 'data.function.call',
           parse(variable, context) {
             const {
-              props: { function: code, args = [] },
+              name,
+              props: { function: _function, args = [] },
             } = variable;
+            const { code, variables = [] } = _function || {};
 
             if (code) {
-              const fn: unknown = api?.evalWithScope
-                ? api.evalWithScope<(scope: unknown) => unknown>({ $this: context }, code)
-                : '';
-              if (typeof fn === 'function') {
-                const result = fn.call(context, ...args);
-                return result;
-              }
+              const vars = variables.map((item, idx) => ({ ...item, varStr: `v_${idx}` }));
+              const result = api?.executeFun ? api.executeFun(code, [context, ...args], vars) : '';
+              return result;
             }
 
-            throw new Error(`${variable.name} function is correct`);
+            throw new Error(`${name} function is correct`);
           },
         } as VariableParseEntity<FunctionVariable>;
       },

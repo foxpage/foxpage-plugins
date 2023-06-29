@@ -1,7 +1,7 @@
 import { fromPairs } from 'lodash';
 
 import { pick } from '@foxpage/foxpage-shared/lib/common/utils';
-import { Context } from '@foxpage/foxpage-types';
+import { Context, VariableItem } from '@foxpage/foxpage-types';
 
 type PickContext<K extends keyof Context> = Partial<Pick<Context, K>>;
 
@@ -37,6 +37,7 @@ export const getURLQueryVar = (ctx: PickContext<'URL'> = {}) => {
 };
 
 export const getURLVar = (
+  _variable: VariableItem,
   ctx: PickContext<'URL'> = {},
 ): PickContext<'URL'> & {
   params: Record<string, string>;

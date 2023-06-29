@@ -1,17 +1,15 @@
 {
-  "name": "@foxpage/foxpage-plugin-urlquery-parse",
+  "name": "@foxpage/foxpage-plugin-render-block",
   "version": "1.0.0",
-  "description": "foxpage urlquery parse plugin",
+  "description": "foxpage block render plugin",
   "keywords": [
     "foxpage",
-    "plugin",
-    "urlquery",
-    "parse"
+    "block render"
   ],
   "author": "xdr肖达荣 <drxiao@trip.com>",
-  "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "license": "MIT",
   "files": [
     "lib/**"
   ],
@@ -26,8 +24,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.prod.json",
     "build:npm": "npm run build -- --skipLibCheck",
-    "clean": "rimraf lib",
-    "prepublishOnly": "npm install && npm run build:npm"
+    "clean": "rimraf lib"
   },
   "devDependencies": {
     "@foxpage/foxpage-plugin": "^1.0.0",
@@ -36,6 +33,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@foxpage/foxpage-core": "^1.0.0"
+    "@foxpage/foxpage-node-sdk": "^1.0.0",
+    "@types/koa": "^2.13.4"
   }
 }

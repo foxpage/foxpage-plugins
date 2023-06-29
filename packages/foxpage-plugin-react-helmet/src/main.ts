@@ -21,6 +21,7 @@ export const createHeadManager = (ctx: Context) => {
  * @returns render result: html string
  */
 export const renderWithHelmet = async (ctx: Context) => {
+  const helmetCost = ctx.performanceLogger?.('helmetTime');
   // for avoid pollute the origin dsl
   const page = ctx.page;
   const _dsl = _.cloneDeep(page?.schemas);
@@ -46,6 +47,7 @@ export const renderWithHelmet = async (ctx: Context) => {
   page.schemas = _dsl;
   ctx.updatePage(page);
 
+  helmetCost();
   return _dsl;
 };
 
